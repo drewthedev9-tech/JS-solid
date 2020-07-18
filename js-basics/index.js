@@ -17,3 +17,13 @@ function displayIndex(){
 }
 
 console.log(displayIndex());
+
+// eqaulity
+
+let x = 10;
+//strict equality operator
+// same type and value
+ console.log( x=== 10) // true
+
+ //losse equlatiy only checks value.
+ console.log( "10"=== 10) // true 
