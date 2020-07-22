@@ -277,7 +277,7 @@ showProperties(movie);// title
 
 // Grade excercise - for of loop///////
 
-const marks = [80, 80, 50];
+// const marks = [80, 80, 50];
 
 // average 80+80+50 / 3 = 70 
 // 1-69: F
@@ -287,33 +287,93 @@ const marks = [80, 80, 50];
 // 90 - 100 : A
 // x+=y -> x = x + y
 
-const marks = [80,80, 50];
+// const marks = [80,80, 50];
 
-const calculateGrade = average => {
- const average = calculateAverage(marks);
+// const calculateGrade = average => {
+//  const average = calculateAverage(marks);
 
-    if(average < 60)
-    console.log("fail");
-    if(average < 70)
-    console.log("D");
-    if(average < 80)
-    console.log("C");
-    if(average < 80)
-    console.log("A");
-    esle
-    return "A";
+//     if(average < 60)
+//     console.log("fail");
+//     if(average < 70)
+//     console.log("D");
+//     if(average < 80)
+//     console.log("C");
+//     if(average < 80)
+//     console.log("A");
+//     esle
+//     return "A";
+// }
+
+// function calculateAverage(arrays){
+//     let sum = 0;
+//     // loop through indexes of marks.
+//     for(let value of array)
+//     sum = sum + mark;
+//     // calculate average
+//     return sum / array.length;
+// }
+
+// console.log(calcuateGrade(marks));
+
+// show stars - nested loop.
+
+function showStars(rows){
+    // loop through the row number
+    for (let row =1; row <= rows; row++){
+        let pattern ='';
+        // for every roww number incremnet pattern ''.
+        for (let i =0; i< row; i++)
+        pattern = pattern + "*";
+    console.log(pattern);
+    }
+
 }
 
-function calculateAverage(arrays){
-    let sum = 0;
-    // loop through indexes of marks.
-    for(let value of array)
-    sum = sum + mark;
-    // calculate average
-    return sum / array.length;
+showStars(5);
+
+// exc. prime numbers///// - show only prime numbers
+// from function argument.
+// prime (whose factors are only 1 and its self).
+// 11 = 1,11
+// 13= 1,13
+// composite
+// 12= 1,2,3,4,6,12,
+
+// singl expressions from if and else dont need
+// curly braces.
+
+function showPrimes(limit){
+    // loop through limit number
+    for (number = 2; number < limit ; number++)
+       if(isPrime(number)) 
+        console.log(number)
 }
 
-console.log(calcuateGrade(marks));
+// function for finding a prime number.
+function isPrime(number){
+  
+    // nested loop through the factors of the numbers
+    for( factor = 2; factor < number; factor++)
+    if (number % factor ===0)
+       return false; // not a prime.
+     else 
+        return true; // is a prime.
+}
+showPrimes(15);
+
+// count is liek the limit for the loo to go to
+// prints 1-10 on the cosnole.
+function numberLoop(count){
+    for(i = 0; i < count ; i++)
+    console.log(i)
+
+}
+
+ const counter = numberLoop(10);
+ console.log(counter);
+
+
+
 
 
 
