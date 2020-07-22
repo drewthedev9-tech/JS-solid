@@ -198,7 +198,122 @@ const fizzBuzz =(input)=>{
 const output = fizzBuzz(15);
 console.log(output);
 
+// excercise demerit points
+// spped limit = 70
 
+//  checkSpeed excercise
+// 5 km above speed limit -> 1 point
+// math.floor
+// >12 points -> lisence suspended
+// make sure to test with different values.
+checkSpeed(130);
+
+function checkSpeed(speed){
+    const speedlimit = 70;
+    // for every 5km 1 point
+    const kmPerPoint = 5;
+    if (speed < speedlimit + kmPerPoint)
+        console.log("ok");
+   else {
+    const points = Math.floor((speed - speedlimit) / kmPerPoint);
+    if (points >= 12)
+        console.log("lisence suspended");
+    else
+        console.log('points', points);
+}
+
+}
+
+// loop even and odd numbers
+
+
+ const showNumbers = limit => {
+     for( let i = 0 ; i <=limit; i++){
+        //  if (i % 2 === 0 )
+        //  console.log(i, "even")
+        //  else 
+        //  console.log(i,"odd");
+        // clean code
+         const message = (i % 2 === 0) ? "Even": "ODD;"
+         console.log(i, message);
+     }
+ }
+ showNumbers(10);
+//  how many red colors in the array.
+
+
+// string properties - excercise function that reads through and object
+// and then consoles the properties of that object that are a string.
+
+// // for in///// used to iterate over the properties of an object.
+
+// const person = {
+//     name: mosh,
+//     age: 30
+// };
+
+// for (let key in person )
+// console.log(key, person[key]);
+
+const movie ={
+    title: 'a',
+    releaseYear: 2018,
+    rating: 4.5,
+    director: 'b'
+}
+
+const showProperties = obj =>{
+    // movie obj above key being title, relaseYear, rating, diretor
+    for (let key in obj){
+        // key that have strings
+        if ( typeof obj[key] === "string")
+        // property backet notation
+        // cosole that key and its property
+        console.log(key, obj[key]);
+    }
+}
+
+showProperties(movie);// title
+
+// Grade excercise - for of loop///////
+
+const marks = [80, 80, 50];
+
+// average 80+80+50 / 3 = 70 
+// 1-69: F
+//  60- 69 :D
+// 70-79: C
+// 80-89 B
+// 90 - 100 : A
+// x+=y -> x = x + y
+
+const marks = [80,80, 50];
+
+const calculateGrade = average => {
+ const average = calculateAverage(marks);
+
+    if(average < 60)
+    console.log("fail");
+    if(average < 70)
+    console.log("D");
+    if(average < 80)
+    console.log("C");
+    if(average < 80)
+    console.log("A");
+    esle
+    return "A";
+}
+
+function calculateAverage(arrays){
+    let sum = 0;
+    // loop through indexes of marks.
+    for(let value of array)
+    sum = sum + mark;
+    // calculate average
+    return sum / array.length;
+}
+
+console.log(calcuateGrade(marks));
 
 
 
