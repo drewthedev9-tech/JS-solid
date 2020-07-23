@@ -38,13 +38,21 @@ function Cirlce(radius){
 //    this.return - this happening under the hood.
 }
 
-// when you use new
+// when you use "new".
 // nw creates a empty object -> x ={}
 // points this in above function to th object below object.
 // retunrs object fromt he cnstructor function.
 const circle = new Cirlce(1);
 
 // cant change object variable but you can change object properties.
+
+// constructor property
+// every object has a property called contsutor, and taht constructor references 
+// that function that was used to creat that object.
+
+// functions are objects.
+
+
 
 
 
