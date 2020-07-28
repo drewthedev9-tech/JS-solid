@@ -67,7 +67,7 @@ const circle = new Cirlce(1);
 // for of loops are for iterating over arrays.
 for (let key in circleObj){
     // bracket notationn to get the value of the property.
-    console.log(key, circle[key]);
+    console.log(key, circleObj[key]);
 }
 
 // way to iterate over object with for of using object.keys.
@@ -88,8 +88,6 @@ const circleObj ={
     }
 };
 
-const another = {
-}
 
 // OLD way of cloning objects
 // for(let key in circleObj)
@@ -114,10 +112,86 @@ const another = {...circleObj};
 // Math - dealing with mathematcial calculations - look at MDN
 
 // String primitive.
-const message ='This is my first message';
+// const message ='This is my first message';
 
-// string object
-const another = new String('hi');
+// // string object
+// const another = new String('hi');
+
+// template literals ES6
+// const  another = `This is my
+// 'first' message, Hi ${John} im ${2 +3}`;//5
+
+// DATE - built in object
+const now = new Date();
+const date1 = new Date('May 11 2018 09:00');
+const date2 = new(2018, 4, 11, 9); // 0 based january is o so may i 4 instead of 5
+
+now.setFullYear(2017);
+
+//Excercise - address object ////////
+// street 
+// city
+// zip code
+// showAddress
+
+const address ={
+    street: "bloomeberg",
+    city: "daytona",
+    zipcode : "31345"
+}
+
+const showAdress=(address)=>{
+ for ( let key in address){
+    console.log(key, address[key]);
+ }
+}
+
+showAddress(address);
+//  excercise function factory and constructor functions.
+// from address function
+// and a constructor function
+
+// function crateAdress(stret, city, zipcode){
+//     return{
+//         street: stret,
+//         city: city,
+//         zipcode : zipcode
+
+//     } ; 
+// }
+
+// const adress1 = crateAdress(a,b, c);
+// console.log(address1);
+
+// constructor function
+function CreateAdress(street, city, zipcode){
+    {
+       this.street = street;
+       this.city = city;
+       this.zipcode = zipcode;
+
+    } ; 
+}
+
+const newAdresss = new CreateAdress(a,b,c);
+console.log(newAddress);
+const newAdresss2 = new CreateAdress(a,b,c);
+
+// excercise Object equality
+// check to see if two objects are the same
+
+function areEqual(newAdress, newAdress2){
+     return newAdress.street === newAdress2.street &&
+     newAdress1.city === newAdress2.city &&
+     newAdress1.zipcode === newAdress2.zipcode
+
+}
+
+function areSame(newAdress, newAdress2){
+    // strict comparison
+    return newAdress === newAdress2
+}
+
 
 
 
