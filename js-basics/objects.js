@@ -64,7 +64,7 @@ const circle = new Cirlce(1);
 // };
 
 // interating over an object - for in is for objects
-// for of loops are for iterating over arrays.
+// for in loops are for iterating over arrays.
 for (let key in circleObj){
     // bracket notationn to get the value of the property.
     console.log(key, circleObj[key]);
@@ -74,7 +74,8 @@ for (let key in circleObj){
 for (let key of Object.keys(circleObj))
     console.log(key);
 
-// way to iterate over object with for of using object.entries.
+// way to iterate over object with for 
+ using object.entries.
 for (let entry of Object.entries(circleObj))
 console.log(entry);
 
