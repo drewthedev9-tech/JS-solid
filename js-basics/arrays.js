@@ -181,12 +181,12 @@ const atLeastOnePositive = numbers.some(function (value){
 
 // chaining using multiple methods
 //function that filters everything above 0.
-const items = numbersElements.filter(function(value){
-    return value >=0;
-}).map(n => {
-    return obj = ({value: n });
+// const items = numbersElements.filter(function(value){
+//     return value >=0;
+// }).map(n => {
+//     return obj = ({value: n });
    
-});
+// });
 
 // console.log(filtered)
 
@@ -197,7 +197,7 @@ const items = numbersElements.filter(function(value){
    
 // });
 
-console.log(items); ///ac
+// console.log(items); ///ac
 
 // reducing an array - reduce all elemnts in a single array into a  single value.
 
@@ -220,3 +220,16 @@ const sum = numbersElements.reduce( (accumuator, currentValue)=>{
 },0);
 
 console.log(sum);
+
+// exc. array that does the range from number to number.
+
+
+ const rangeCounter =(min,max)=>{
+     const output = [];
+     for (let i =min; i <= max; i++)
+     output.push(i);
+     return output;
+ }
+
+ const numbersRange = rangeCounter(1,10);
+ console.log(numbersRange);
