@@ -27,7 +27,7 @@ const circle2 = createCircle(2);
 console.log(circle2);
 
 // constructor functions////// - constructe and object
-// PAscal notation - capital letter on forst word.
+// PAscal notation - capital letter on first word.
 
 function Cirlce(radius){
     // this pointing to an ampty object adding the functions radius.
@@ -56,12 +56,12 @@ const circle = new Cirlce(1);
 // for in for objects
 // for of for arrays - BUT using objec.keys or object.entries.
 
-// const circleObj ={
-//     radius: 1, 
-//     draw(){
-//         console.log('draw');
-//     }
-// };
+const circleObj ={
+    radius: 1, 
+    draw(){
+        console.log('draw');
+    }
+};
 
 // interating over an object - for in is for objects
 // for in loops are for iterating over arrays.
@@ -71,23 +71,23 @@ for (let key in circleObj){
 }
 
 // way to iterate over object with for of using object.keys.
-for (let key of Object.keys(circleObj))
-    console.log(key);
+// for (let key of Object.keys(circleObj))
+//     console.log(key);
 
 // way to iterate over object with for 
- using object.entries.
-for (let entry of Object.entries(circleObj))
-console.log(entry);
+//  using object.entries.
+// for (let entry of Object.entries(circleObj))
+// console.log(entry);
 
 // cloning and object////////
 // usig circleObj above.
 
-const circleObj ={
-    radius: 1, 
-    draw(){
-        console.log('draw');
-    }
-};
+// const circleObj ={
+//     radius: 1, 
+//     draw(){
+//         console.log('draw');
+//     }
+// };
 
 
 // OLD way of cloning objects
@@ -125,7 +125,7 @@ const another = {...circleObj};
 // DATE - built in object
 const now = new Date();
 const date1 = new Date('May 11 2018 09:00');
-const date2 = new(2018, 4, 11, 9); // 0 based january is o so may i 4 instead of 5
+const date2 = new Date(2018, 4, 11, 9); // 0 based january is o so may i 4 instead of 5
 
 now.setFullYear(2017);
 
@@ -147,7 +147,7 @@ const showAdress=(address)=>{
  }
 }
 
-showAddress(address);
+// console.log(showAddress(address));
 //  excercise function factory and constructor functions.
 // from address function
 // and a constructor function
@@ -174,9 +174,10 @@ function CreateAdress(street, city, zipcode){
     } ; 
 }
 
-const newAdresss = new CreateAdress(a,b,c);
-console.log(newAddress);
-const newAdresss2 = new CreateAdress(a,b,c);
+const newAdresss = new CreateAdress('a','b','c');
+
+
+// console.log(newAddress);
 
 // excercise Object equality
 // check to see if two objects are the same
@@ -193,7 +194,48 @@ function areSame(newAdress, newAdress2){
     return newAdress === newAdress2
 }
 
+// blog posts excercise - make a object with the folllowing
 
+const blogPosts = {
+    title : "a",
+    body: "b",
+    author: " me",
+    views : 100,
+    comments : [
+        {author: "me1", body: "hello"},
+        {author: "me2", body: "hello2"}
+       
+],
+    isLive: true
+} 
+
+// conststructor function excercise///// - make a constructor function with blog objects.
+ function blogPost(title, body, author){
+    // this pointing to an ampty object adding the functions title etc..
+     this.title = title;
+     this.body = body;
+     this.author = author;
+     this.views = 0;
+     this.comments = [];
+     this.isLive = false;
+ }
+
+ const post = new blogPost('a','b','c');
+ console.log(post);
+
+//  price range object excercise - create an object that has 3 
+// price ranges.
+
+const priceRanges = [
+    { label: '$', toolTip: 'Inexpensive', minPerson: 0, maxPerson :10},
+    { label: '$$', toolTip: 'Moderate', minPerson: 11, maxPerson :20},
+    { label: '$$$', toolTip: 'Inexpensive', minPerson: 21, maxPerson :50}
+
+]
+
+let resteraunts =[
+    {averagePerPerson: 5}
+]
 
 
 

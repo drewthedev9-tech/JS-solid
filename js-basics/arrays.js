@@ -8,10 +8,10 @@ console.log(numbers)//[3,4,5,6]
 
 
 
-// middle  inex, delete numbers, adding numbers
+// middle  index, delete numbers, adding numbers
 numbers.splice(2, 0, 'a', 'b')
 
-// finding elements (primitives)
+// finding elements (primitives) indexof.
 // const numbers1 =[1,2,3,1,4];
 
 // numbers.indexOf(1)// 0 , 1 is at 0 index.
@@ -75,8 +75,8 @@ numbers.splice(0, numbers.length);
 // console.log(numbers);
 // console.log(another);
 
-// ccombining and slicing arrays.//////
-// object when sliced will copy teh reference not make new object.
+// combining and slicing arrays.//////
+// object when sliced will copy the reference not make new object.
 const first = [{id: 1}];  
 
 const second = [4,5,6];
@@ -102,7 +102,7 @@ const second = [4,5,6];
 // const copy = [...combined];
 // console.log(copy);
 
-// iterating an array...
+// iterating an array...//////
 
 const numbersArray =[1,2,3,];
 for (let number of numbersArray)
@@ -141,8 +141,6 @@ console.log(numbersSort);
 const coursesNew = [
     {id: 1, name: 'Node.js'},
     {id: 2, name: 'javaScript'}
-  
-
 ];
 
 courses.sort(function(a,b){
@@ -171,10 +169,54 @@ console.log(coursesNew);
 //     return value >= 0;
 // })
 
-// some
+// some - testig elements in an array.
 // checks to see if at least one of the criteria is true.
 const atLeastOnePositive = numbers.some(function (value){
     return value >= 0;
 })
 
 // filtering an array.
+
+// const numbersElements = [1,-1,2,3];
+
+// chaining using multiple methods
+//function that filters everything above 0.
+const items = numbersElements.filter(function(value){
+    return value >=0;
+}).map(n => {
+    return obj = ({value: n });
+   
+});
+
+// console.log(filtered)
+
+// mapping an array - returns a new array.
+
+// const items = filtered.map(n => {
+//     return obj = ({value: n });
+   
+// });
+
+console.log(items); ///ac
+
+// reducing an array - reduce all elemnts in a single array into a  single value.
+
+const numbersElements = [1,-1,2,3];
+
+// algortihmn for clalculating all the sums in the array.
+
+// let sum = 0;
+
+// for(let n of numbersElements)
+// sum = sum + n;
+
+
+// reduce has two arguments the call back function and the 0 being the 
+// intial value of the accumauator.
+const sum = numbersElements.reduce( (accumuator, currentValue)=>{
+     return accumuator + currentValue;
+    //  if you dont supplly an initial value for the acc , the first 
+    // index of the array will be used.
+},0);
+
+console.log(sum);
