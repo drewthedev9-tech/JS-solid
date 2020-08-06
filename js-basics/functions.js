@@ -50,3 +50,52 @@ function sum(discount,...prices){
 // shopping cart has 10percent discount and two items 
 // 20 an 30 dollars.
 console.log(sum(0.1, 20, 30));
+
+//  default parameters 
+// /calcuates how much interest you have to pay on amount
+function interest(principal, rate, years ){
+   
+    return principal * rate / 100 * years;
+}
+
+console.log(interest(10000, 3.5, 5));
+
+// getters and setters///// - changing an object parameters.
+
+// getters => access properties
+// setters => change (mutate) them.
+// try and catch ////
+
+const person ={
+    firstName: 'Mosh',
+    lastName : 'hamedani',
+    // method 
+     get fullName(){
+        return `${person.firstname} ${person.lastName}`
+    },
+    set fullName(value){
+        if (typeof value !== 'string')
+            throw new Errror("value is not a String.")
+            
+        const parts = value.split(' ');
+        
+        if(parts.length !==2 )
+            throw new Error('Enter a first and last name')
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
+}
+
+// error handling excecuted from throw error message
+try {
+    // change person object.
+person.fullName = 'john Smith';
+}
+catch(e){
+   alert(e);
+}
+
+
+
+console.log(person);
+
