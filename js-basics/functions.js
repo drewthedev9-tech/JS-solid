@@ -88,7 +88,7 @@ const person ={
 
 // error handling excecuted from throw error message
 try {
-    // change person object.
+    // change person object from here.
 person.fullName = 'john Smith';
 }
 catch(e){
@@ -99,3 +99,88 @@ catch(e){
 
 console.log(person);
 
+//  global  vs local scope ////////
+// determoes where a variable is accesible.
+// avoid using too many global variables.
+
+// global scoped.
+// const color = red;
+
+// private scoped.
+function start(){
+// message only accessible in this block.
+const message = "hi";
+console.log(message);
+for (let i =0; i <=5 ; i++){
+    console.log(i)
+
+
+}
+// cannot do here not inside scope block above. 
+// console.log(i)
+
+}
+
+start();
+
+// Let vs Var /////// 
+// var is not limited by the block in which it is described.
+function start1(){
+    for (var i =0;i < 5 ; i++){
+        // console.log(i);
+        // becauseof var color is accesible anywhere in the function.
+        if(true){
+            var color = 'red';
+        }
+         
+    }
+    console.log(color);
+}
+
+// var as global///
+// var also attatches the variable to the window object
+// so if you type in the console window,color output = red;
+// this can be bad if you hav a third party library that attatches and overides stuff
+// avoid var.
+// var color1  = red;
+// let age = 30;
+
+// var creayes function scoped variables.
+// ES6 (2015) let , const -> block scoped 
+
+start1();
+
+// the this key word /////////////
+
+// method -> obj
+// function references -> global (window, global).
+
+const video ={
+    title: 'a',
+    play(){
+        console.log(this);
+    }
+};
+
+// adding a mthod to object 
+video.stop = function(){
+    console.log(this); // references video object.
+}
+
+function playVideo(){
+    console.log(this) // reference window object.
+}
+
+video.play(); // video obj.
+
+const video1 ={
+    title: 'a',
+    tags: ['a','b','c'],
+    showTags(){
+        this.tags.forEach(function(tag){
+            console.log( this.title, tag);
+        }, this)
+    }
+}
+
+video1.showTags();
