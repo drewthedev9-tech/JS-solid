@@ -227,9 +227,29 @@ console.log(sum);
  const rangeCounter =(min,max)=>{
      const output = [];
      for (let i =min; i <= max; i++)
+    //  pushing the looped numbers onto out array.
      output.push(i);
      return output;
  }
+ 
 
  const numbersRange = rangeCounter(1,10);
  console.log(numbersRange);
+
+
+// make a function that works liek includes
+// includes checks to see if it has a citeria:
+// check to see if there is a a one.
+console.log(numbers.includes(1));
+
+numbersIncludes = [1,2,3,4,5]
+
+ function includes(array, searchElement){
+     //loop
+     for(let element of array)
+     if (element === searchElement)
+     return true;
+     return false;
+ }
+
+ console.log()

@@ -163,7 +163,6 @@ const showAdress=(address)=>{
 
 // const adress1 = crateAdress(a,b, c);
 // console.log(address1);
-
 // constructor function
 function CreateAdress(street, city, zipcode){
     {

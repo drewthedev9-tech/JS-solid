@@ -173,14 +173,86 @@ function playVideo(){
 
 video.play(); // video obj.
 
-const video1 ={
-    title: 'a',
-    tags: ['a','b','c'],
-    showTags(){
-        this.tags.forEach(function(tag){
-            console.log( this.title, tag);
-        }, this)
-    }
-}
+// const video1 ={
+//     title: 'a',
+//     tags: ['a','b','c'],
+//     showTags(){
+//         this.tags.forEach(function(tag){
+//             console.log( this.title, tag);
+//         }, this)
+//     }
+// }
 
-video1.showTags();
+// video1.showTags();
+
+// changing this /////////
+
+// dont use this approach.
+// const video1 ={
+//         title: 'a',
+//         tags: ['a','b','c'],
+//         showTags(){
+//             // this referencing this object.
+//             const self = this; 
+//             this.tags.forEach(function(tag){
+//                 console.log( self.title, tag);
+//             })
+//         }
+//     }
+
+
+// usig bind to attach this to the function not the call back function.
+// const video1 ={
+//         title: 'a',
+//         tags: ['a','b','c'],
+//         showTags(){
+//             // this function would point towards the
+//             // window oject without binding it
+//             this.tags.forEach(function(tag){
+//                 console.log( this.title, tag);
+//             }.bind(this));
+//         }
+//     }
+
+// Arrow functions inherit the this keyword
+// when dealing with call back function in a object
+// use arrow functions
+const video1 ={
+            title: 'a',
+            tags: ['a','b','c'],
+            showTags(){
+            //    => inherits "this" keyword from "this.tags and carrie it into the
+            //  =>function"
+                this.tags.forEach((tag)=>{
+                    console.log( this.title, tag);
+                });
+            }
+        }
+
+    
+ video1.showTags();
+  
+    // function playVideo(){
+    //     console.log(this);
+    // }
+
+    // // call refers to this and can be changed
+    // playVideo.call({ name: 'Mosh'})
+    // // apply does same thing but has to be passed as an array.
+    // playVideo.apply({ name: 'Andrew'})
+    // // retunrs a new function with tyis pointing to the name: andrew property.
+    // const fn = playVideo.bind({ name: 'Bob'});
+    // fn();
+    
+    // exc - creat a fucntion that takes numbers and create their
+    // sum
+    // then sum up the numbers in an array.
+
+    function sum(...args){
+        return args.reduce((a,b)=>{
+             return a+ b;
+            })
+
+    }
+
+    console.log(sum(1,2,3,4));
