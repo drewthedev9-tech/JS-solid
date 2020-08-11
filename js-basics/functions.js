@@ -43,7 +43,7 @@ function sum(discount,...prices){
     // reduce takes all values and puts them into a single.
 
  const total =  prices.reduce((a,b) => a + b)
-// final price aftr discount.
+// final price after discount.
  return total * (1 - discount);
 }
 
@@ -244,15 +244,12 @@ const video1 ={
     // const fn = playVideo.bind({ name: 'Bob'});
     // fn();
     
+
+
     // exc - creat a fucntion that takes numbers and create their
     // sum
     // then sum up the numbers in an array.
-
-    function sum(...args){
-        return args.reduce((a,b)=>{
-             return a+ b;
-            })
-
-    }
-
-    console.log(sum(1,2,3,4));
+   
+  function sum(...args){
+    return args.reduce((a,b)=> a+b);
+  }
