@@ -354,7 +354,7 @@ const filtered = numbersFilter.filter(value=>{
     return value >= 1
 });
 
-console.log(filtered)
+console.log( "filter" + filtered)
 
 // The sort() method sorts the elements of an array in place and returns the sorted array
 // works on numbers and strings
@@ -363,3 +363,22 @@ const numbersSort1 = [4,5,6,78,3,];
 
 numbersSort1.sort()
 console.log(numbersSort1);
+
+// slice 
+// The slice() method returns the selected elements in an array, as a new array object.
+// The slice() method selects the elements starting at the given start argument, and ends at, but does not include, the given end argument.
+
+const numbersSlice = [1,2,3,4,5];
+
+const sliceResult = numbersSlice.slice(1,3);
+console.log( " slice " + sliceResult);
+
+const numbersFind = [1,2,3,4,5];
+
+// The find() method returns the value of the first element in the provided array that satisfies the provided testing function.
+// find first number higher than 2.
+const numberFinder = numbersFind.find( number =>{
+    return number >= 2;
+});
+
+console.log(numberFinder);
