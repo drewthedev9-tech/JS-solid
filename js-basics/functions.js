@@ -248,8 +248,33 @@ const video1 ={
 
     // exc - creat a fucntion that takes numbers and create their
     // sum
-    // then sum up the numbers in an array.
+    // even be able to sum up the numbrs in an array.
    
   function sum(...args){
+
+    if(args.length === 1 && Array.isArray(items[0]))
     return args.reduce((a,b)=> a+b);
   }
+
+  console.log(sum([1,2,3,4]));
+
+  // numbers moving excercise
+const numbersMoving =[1,2,3,4];
+
+function move(array, index, offset){
+        const position = index + offset;
+        if (position >= array.length){
+            console.error('Invalid offset');  
+            return; 
+        }
+
+        const output = [...array];
+     const element = ouput.splice(index, 1)[0];
+      output.splice(position + offset,0,element);
+      return output;
+
+}
+
+const outPut = move(numbersMoving, 0, 3);
+
+console.log(output);

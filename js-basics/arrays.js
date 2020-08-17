@@ -190,8 +190,9 @@ const atLeastOnePositive = numbers.some(function (value){
 
 // console.log(filtered)
 
-// mapping an array - returns a new array.
+// mapping an array - returns a new array. map maps elements in a new array for each element.
 
+// mapping alemnets an object
 // const items = filtered.map(n => {
 //     return obj = ({value: n });
    
@@ -269,6 +270,96 @@ function except(array, excluded){
     return output;
 }
 
-const output = except(numbersExcept,[1,2,3,4]);
+const output = except(numbersExcept,[1,2]);
 
 console.log(output);
+
+// count occurences count howm many times the number occurs in array.
+
+const numbersOccure =[1,2,3,4];
+ function countOccurences(array, searchElement){
+     let count = 0;
+     for(let element of array)
+     if(element === searchElement)
+     count ++;
+     return count;
+
+
+ }
+
+const count = countOccurences(numbersOccure, 1);
+console.log(count);
+
+const months = ['Jan', 'March', 'April', 'June'];
+// splice  params (start, deletecount, item to insert)
+// months.splice(1, 0, 'Feb')
+
+months.splice(4, 1, 'May');
+
+console.log(months);
+
+// map method - mapping numbers in an object
+
+numbersMap = [1,2,3,4,5];
+
+const numberObj = numbersMap.map(n =>{
+    const obj = {value: n};
+    return obj;
+})
+
+console.log(numberObj);
+
+// map method - mapping numbers in an string
+
+const numberStr = numbersMap.map(n =>{
+   string = n.toString();
+   return string;
+})
+
+console.log(numberStr);
+
+// movies excercise
+const movies =[
+    {title: 'a',year: 2018,rating: 4.5},
+    {title: 'b',year: 2018,rating: 4.7},
+    {title: 'c',year: 2018,rating: 4.7},
+    {title: 'd',year: 2017,rating: 4.5},
+  
+]
+
+// get all movies in 2018 with rating > 4
+// sort them by their rating.
+// in a desc order
+// only display title property and display it on console.
+
+// chain funtions
+const filterMovie = 
+// makes a new array with these criteria 
+movies.filter( m=> m.year === 2018 && m.rating >=4)
+// // sort them by their rating.
+.sort((a,b) => a.rating - b.rating)
+.reverse()
+.map (m=>m.title)
+
+console.log(filterMovie);
+
+
+
+
+// filter cuts out based n value.The filter() method creates a new array with all elements 
+// that pass the test implemented by the provided function.
+const numbersFilter = [1,-1,2,3,4]
+
+const filtered = numbersFilter.filter(value=>{
+    return value >= 1
+});
+
+console.log(filtered)
+
+// The sort() method sorts the elements of an array in place and returns the sorted array
+// works on numbers and strings
+
+const numbersSort1 = [4,5,6,78,3,];
+
+numbersSort1.sort()
+console.log(numbersSort1);
