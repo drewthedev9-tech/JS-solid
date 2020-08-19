@@ -30,9 +30,10 @@ for(let key in circle) console.log(key);
 
 // excecise
 
-// creating own prototypical inheritance
+// creating own prototypical inheritance /////////////
 
-function Shape(){
+function Shape(color){
+    this.color = color;
 
 }
 
@@ -40,17 +41,70 @@ Shape.prototype.duplicate = function(){
     console.log("duplicate");
 }
 
-function Circle(radius){
+function Circle(radius,color){
+    // calls the super construtor , meaning teh this key word from shape and
+    // its corresponding arg.
+    Shape.call(this,color);
     this.radius = radius;
 }
 
-Circle.prototype = Object.create(shape.prototype);
+// adding to the protoype of circle.
+Circle.prototype = Object.create(Shape.prototype);
 
 Circle.prototype.draw = function(){
     console.log("draw");
 }
 
 const s = new Shape();
-const  c = new Circle(1);
+const  c = new Circle(1,"red");
+console.log(c);
 
-// Resetting the constructor////
+// intermediate Function inheritance///////
+// inheriting from preant or protoype
+
+
+    function extend(Child, Parent){
+        Child.prototype = Object.create(Parent.prototype);
+        Child.prototype.constructor = Circle;
+    }
+
+    function Shape(){
+        
+    }
+    
+    // add duplicate to prototype object of shaoe
+    Shape.prototype.duplicate = function(){
+        console.log("duplicate");
+    }
+
+    function Circle(radius,color){bjj scout
+      
+    }
+
+    // intermediate function inheritance. off the extend function.
+    extend(Circle, Shape);    
+
+    const  c = new Circle(1,"red");
+    console.log(c);
+
+// Method Overriding ///// - need to study.
+
+polymor
+
+
+// passing a argument to a child fucntion to inherit in achild class.
+// Class.call(this, call);
+// The call() method calls a function with a given this value and arguments provided individually.
+
+function Player(team){
+    this.team = team;
+}
+
+function SoccerPlayer(name, team){
+    // inherit color from Player.
+    Player.call(this,team);
+    this.name = name;
+}
+
+const newPlayer = new SoccerPlayer("jobe", "red");
+console.log(newPlayer);
