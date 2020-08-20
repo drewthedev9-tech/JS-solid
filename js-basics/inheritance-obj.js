@@ -77,7 +77,7 @@ console.log(c);
         console.log("duplicate");
     }
 
-    function Circle(radius,color){bjj scout
+    function Circle(radius,color){
       
     }
 
