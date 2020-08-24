@@ -111,7 +111,7 @@ console.log(c);
   
 // }
 
-// // intermediate function inheritance. off the extend function.
+// // intermediate function inheritance. off the extend function and key word.///////
 // extend(Circle, Shape); 
 
 // function Square(){
