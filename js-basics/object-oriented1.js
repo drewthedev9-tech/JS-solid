@@ -136,7 +136,6 @@ circleSetter.getDefaultLocation();
 
 
 
-
 // excercise - make a constructor excercise with player - own excrcise.
 
 function player(team, sport){

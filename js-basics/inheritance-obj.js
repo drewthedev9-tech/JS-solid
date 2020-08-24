@@ -1,4 +1,5 @@
-// Inheritance
+// Inheritance - great way to avoid code reusability.
+// in small projects kep it simple and stupid.
 
 // protoype and prototypical inheritance
 // every object in JS has a protyoe where it can inherit or get oher
@@ -63,34 +64,129 @@ console.log(c);
 // inheriting from preant or protoype
 
 
-    function extend(Child, Parent){
-        Child.prototype = Object.create(Parent.prototype);
-        Child.prototype.constructor = Circle;
-    }
+    // function extend(Child, Parent){
+    //     Child.prototype = Object.create(Parent.prototype);
+    //     Child.prototype.constructor = Circle;
+    // }
 
-    function Shape(){
+    // function Shape(){
         
-    }
+    // }
     
-    // add duplicate to prototype object of shaoe
-    Shape.prototype.duplicate = function(){
-        console.log("duplicate");
-    }
+    // // add duplicate to prototype object of shaoe
+    // Shape.prototype.duplicate = function(){
+    //     console.log("duplicate");
+    // }
 
-    function Circle(radius,color){
+    // function Circle(radius,color){
       
-    }
+    // }
 
-    // intermediate function inheritance. off the extend function.
-    extend(Circle, Shape);    
+    // // intermediate function inheritance. off the extend function.
+    // extend(Circle, Shape);    
 
-    const  c = new Circle(1,"red");
-    console.log(c);
+    // const  c = new Circle(1,"red");
+    // console.log(c);
 
 // Method Overriding ///// - need to study.
 
-polymor
+// polymorphism///////////// - It provides an ability to call the 
+// same method on different JavaScript objects.
 
+// function extend(Child, Parent){
+//     Child.prototype = Object.create(Parent.prototype);
+//     Child.prototype.constructor = Circle;
+// }
+
+// function Shape(){
+    
+// }
+
+// // add duplicate to prototype object of shaoe
+// Circle.prototype.duplicate = function(){
+//     console.log("duplicate");
+// }
+
+// function Circle(radius,color){
+  
+// }
+
+// // intermediate function inheritance. off the extend function.
+// extend(Circle, Shape); 
+
+// function Square(){
+
+// }
+
+// extend(Square,shape);
+
+// Square.prototype.duplicate = function(){
+//     console.log("Duplicate square");
+// }
+
+// // array of the shape instances above.
+// const shapes = [
+//     new Circle(),
+//     new Square()
+// ];
+
+// // loop through teh array of objects
+// for(let shape of shapes)
+//     shape.duplicate();
+
+
+// mixins help deal woth over the top complex hierarchies of OOP.
+// they do compositional programming.
+
+// mixin
+// ...rest operator tunrs all arguments into a single array.
+// function mixin(target, ...sources){
+//     Object.assign(target,...sources);
+// }
+
+// features
+const canEat={
+    eat: function(){
+        this.hunger;
+        console.log('eating');
+    }
+};
+
+
+const canWalk = {
+    walk: function(){
+        console.log('eating')
+    }
+};
+
+const canSwim = {
+    swim: function(){
+        console.log('swim')
+    }
+}
+
+
+
+function Person(){
+
+}
+
+//using assign with Person.protoype as the place to share properties.
+Object.assign(Person.prototype,canEat,canWalk);
+const person= new Person();// canEat, canWalk will be in the Person.protoype.
+// new ES6 to copy the properties from one object to another.
+// arguments -> empty object to put properties into. canEat, canWalk.
+// const person = Object.assign({},canEat,canWalk);
+console.log(person);
+
+// making a goldfish object to inherit the feature swim above.
+function Goldfish(){
+
+}
+
+Object.assign(Goldfish.prototype,canEat,canSwim);
+const goldfish = new Goldfish();
+console.log(goldfish);
 
 // passing a argument to a child fucntion to inherit in achild class.
 // Class.call(this, call);
