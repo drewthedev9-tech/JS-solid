@@ -5,6 +5,12 @@
 // every object in JS has a protyoe where it can inherit or get oher
 // propeeties and fucntions from.
 
+//  4 ways to create objects and inheritance in JS
+// Object as literal
+// Constructor Invocation Pattern
+// The create() method
+// Using class after ES6
+
 
 
 function Circle(radius){
@@ -204,3 +210,4 @@ function SoccerPlayer(name, team){
 
 const newPlayer = new SoccerPlayer("jobe", "red");
 console.log(newPlayer);
+

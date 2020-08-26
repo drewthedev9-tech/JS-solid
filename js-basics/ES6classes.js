@@ -94,6 +94,39 @@ console.log(circleOf);
 // const c = new Circle();
 // c.draw();
 
+// Abstraction  - private members Using symbols
+// const _radius = symbol();
+
+// class CircleAb {
+//     constructor(radius){
+//         // radius is public.
+//         this._radius = radius;
+//     }
+// }
+
+// const newCircle = new CircleAb(1);
+
+////exc - prootypical ihertance /////
+function htmlElement(){
+
+}
+
+// exc sharing properties using object.create///////
+
+function Persona(){
+    this.talk = function(){
+        console.log("I can talk");
+    }
+    this.teach = function(){
+
+    }
+
+}
+
+const teacher = Object.create(Persona);
+console.log(teacher);
+
+
 // exc sharing properties to child class /w class Syntactic sugar.
 
 class Person {
@@ -142,3 +175,69 @@ function SoccerPlayer(name, team){
 
 const newPlayer = new SoccerPlayer("jobe", "red");
 console.log(newPlayer);
+
+
+// creating own prototypical inheritance ".protoype" /////////////
+
+function Shape(color){
+    this.color = color;
+
+}
+
+// adding to the protoype of shape object
+Shape.prototype.duplicate = function(){
+    console.log("duplicate");
+}
+
+function Circlea(radius,color){
+    // calls the super construtor , meaning teh this key word from shape and
+    // its corresponding arg.
+    Shape.call(this,color);
+    this.radius = radius;
+}
+
+// adding to the protoype of circle to shape.
+Circle.prototype = Object.create(Shape.prototype);
+
+Circle.prototype.draw = function(){
+    console.log("draw");
+}
+
+const s = new Shape();
+const  circular = new Circlea(1,"red");
+console.log(circular);
+console.log(s);
+
+
+// exc polymorphism /////////
+// inheriting and ooveriding inheritance from parent class.
+// Classes
+class Game{
+    constructor(game){
+        this.game = game; 
+        this.sport = function() {
+            console.log("I love sports");
+        }
+    }
+    
+  
+    
+    
+}
+//  console.log(Game);
+
+class cricket extends Game{
+   constructor(game){
+    super(game)
+    // still has inherited sport function from parent.
+    //    overrides parent method sports method.Just by using same naming convention.
+    this.mySport = function(){
+        console.log("but i also love cricket");
+    }
+       
+}
+
+}
+
+const cricketGame = new cricket("cricket");
+console.log(cricketGame);
