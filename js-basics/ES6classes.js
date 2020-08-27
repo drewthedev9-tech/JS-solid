@@ -196,10 +196,10 @@ function Circlea(radius,color){
     this.radius = radius;
 }
 
-// adding to the protoype of circle to shape.
-Circle.prototype = Object.create(Shape.prototype);
+// adding shape to the circlea prototype.
+Circlea.prototype = Object.create(Shape.prototype);
 
-Circle.prototype.draw = function(){
+Circlea.prototype.draw = function(){
     console.log("draw");
 }
 
@@ -209,7 +209,7 @@ console.log(circular);
 console.log(s);
 
 
-// exc polymorphism /////////
+// exc polymorphism ///////// - many forms.
 // inheriting and ooveriding inheritance from parent class.
 // Classes
 class Game{
@@ -239,5 +239,70 @@ class cricket extends Game{
 
 }
 
+class rugby extends Game{
+    constructor(game){
+     super(game)
+     // still has inherited sport function from parent.
+     //    overrides parent method sports method.Just by using same naming convention.
+     this.mySport = function(){
+         console.log("but i also love rugby");
+     }
+        
+ }
+ 
+ }
+
 const cricketGame = new cricket("cricket");
 console.log(cricketGame);
+
+const rugbyGame = new rugby("rugby");
+console.log(rugbyGame);
+
+const mySports = [
+    new cricket(),
+    new rugby()
+];
+
+// provides a way to perform a single action in different forms. It provides an ability to
+//  call the same method on different JavaScript objects. 
+// example of polymorphism looping through and array of instances
+// that have the mySport function
+for (let sport of mySports)
+    sport.mySport();
+
+// exercise - protoypical inheritance///////
+
+// create object htmlElement
+// has own method and a protoyoe method
+
+function htmlElemnt(){
+    this.click = function(){
+        console.log("this is click function");
+    }
+}
+
+htmlElemnt.prototype.focus = function(){
+    console.log("this is focus function");
+}
+
+ const e = new htmlElemnt();
+ console.log(e.click());
+
+ function htmlSelectElement(items=[]){
+    this.items = items;
+
+    // add item function.
+    this.addItem = function(){
+        this.items.push(item);
+    }
+    // remove function
+    this.remove = function(item){
+        // delete from list of items and the index of argment item, 1 = delete 1 item in 
+        // splice method.
+        this.items.splice(this.items.indexOf(item), 1);
+    }
+ } 
+
+// adding htmlElelemnt to the  HtmlselectElement protoype so we can get focus mehtod too.
+HtmlSelectElement.prototype = new htmlElement();
+HtmlSelectElement.protoytpe.constructor = HtmlSelectElement;
