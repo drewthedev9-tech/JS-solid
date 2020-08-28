@@ -94,17 +94,26 @@ console.log(circleOf);
 // const c = new Circle();
 // c.draw();
 
-// Abstraction  - private members Using symbols
-// const _radius = symbol();
+//Abstraction  - private members Using symbols
+// symbols are a unique identifier. crete some sort of proivate
+// properties and methods.
+const _radius = symbol();
+const _draw = symbol();
 
-// class CircleAb {
-//     constructor(radius){
-//         // radius is public.
-//         this._radius = radius;
-//     }
-// }
+class CircleAb {
+    constructor(radius){
+        // radius is private property.
+     
+        this[_radius] = radius;
+    }
+    // private method
+    // will be stored in the protoype.
+    [_draw](){
 
-// const newCircle = new CircleAb(1);
+    }
+}
+
+const newCircle = new CircleAb(1);
 
 ////exc - prootypical ihertance /////
 function htmlElement(){
