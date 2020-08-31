@@ -114,6 +114,36 @@ class CircleAb {
 }
 
 const newCircle = new CircleAb(1);
+const _radius = new WeakMap();
+
+
+
+
+// private Members using WeakMaps/////////
+// getters and setters in classes /////// in progress.
+const _radius = WeakMap();
+
+class circleWeak{
+    constructor(radius){
+        _radius.set(this, radius);
+        this.radius = radius;
+
+    }
+}
+
+const c = new circleWeak(1);
+
+// exc- stack excercise ///////in progress.
+
+const _items = WeakMap();
+class Stack{
+
+    
+    constructor(){
+        items.set(this,[]);
+    }
+}
+
 
 ////exc - prootypical ihertance /////
 function htmlElement(){
