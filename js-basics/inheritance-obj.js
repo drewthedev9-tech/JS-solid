@@ -143,6 +143,8 @@ console.log(c);
 
 // mixins help deal woth over the top complex hierarchies of OOP.
 // they do compositional programming.
+// composition programming - heirarchies based n what they do.
+// OOP - hiererchial programs basedonw hat they are.
 
 // mixin
 // ...rest operator tunrs all arguments into a single array.

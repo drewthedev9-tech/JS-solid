@@ -217,6 +217,7 @@ console.log(newPlayer);
 
 
 // creating own prototypical inheritance ".protoype" /////////////
+// and inheriting a method from parent.
 
 function Shape(color){
     this.color = color;
@@ -237,7 +238,7 @@ function Circlea(radius,color){
 
 // adding shape to the circlea prototype.
 Circlea.prototype = Object.create(Shape.prototype);
-
+// creating new method for Cirlcea 
 Circlea.prototype.draw = function(){
     console.log("draw");
 }
@@ -345,3 +346,25 @@ htmlElemnt.prototype.focus = function(){
 // adding htmlElelemnt to the  HtmlselectElement protoype so we can get focus mehtod too.
 HtmlSelectElement.prototype = new htmlElement();
 HtmlSelectElement.protoytpe.constructor = HtmlSelectElement;
+
+
+// Es6 refresher - react course//////
+// make own projects
+
+//  this key word & bind /////
+
+const person = {
+    name: " Andrew",
+    bjj (){
+        // returning areferance to the persn object
+        console.log(this);
+    }
+}
+
+// bind determines the value of this.can set the value of this permamnently
+const jitsu = person.bjj.bind(person);
+console.log(jitsu); 
+
+// so now this stand alon function points to person.bjj function.
+// whcih point to the Bject of that method = person.
+jitsu();
