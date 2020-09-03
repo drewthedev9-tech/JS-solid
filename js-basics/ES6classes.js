@@ -95,7 +95,7 @@ console.log(circleOf);
 // c.draw();
 
 //Abstraction  - private members Using symbols
-// symbols are a unique identifier. crete some sort of proivate
+// symbols are a unique identifier. create some sort of private
 // properties and methods.
 const _radius = symbol();
 const _draw = symbol();
