@@ -97,31 +97,31 @@ console.log(circleOf);
 //Abstraction  - private members Using symbols
 // symbols are a unique identifier. create some sort of private
 // properties and methods.
-const _radius = symbol();
-const _draw = symbol();
+// const _radius = symbol();
+// const _draw = symbol();
 
-class CircleAb {
-    constructor(radius){
-        // radius is private property.
+// class CircleAb {
+//     constructor(radius){
+//         // radius is private property.
      
-        this[_radius] = radius;
-    }
-    // private method
-    // will be stored in the protoype.
-    [_draw](){
+//         this[_radius] = radius;
+//     }
+//     // private method
+//     // will be stored in the protoype.
+//     [_draw](){
 
-    }
-}
+//     }
+// }
 
-const newCircle = new CircleAb(1);
-const _radius = new WeakMap();
+// const newCircle = new CircleAb(1);
+// const _radius = new WeakMap();
 
 
 
 
 // private Members using WeakMaps/////////
 // getters and setters in classes /////// in progress.
-const _radius = WeakMap();
+// const _radius = WeakMap();
 
 class circleWeak{
     constructor(radius){
@@ -131,18 +131,18 @@ class circleWeak{
     }
 }
 
-const c = new circleWeak(1);
+// const c = new circleWeak(1);
 
 // exc- stack excercise ///////in progress.
 
-const _items = WeakMap();
-class Stack{
+// const _items = WeakMap();
+// class Stack{
 
     
-    constructor(){
-        items.set(this,[]);
-    }
-}
+//     constructor(){
+//         items.set(this,[]);
+//     }
+// }
 
 
 ////exc - prootypical ihertance /////
@@ -236,8 +236,10 @@ function Circlea(radius,color){
     this.radius = radius;
 }
 
-// adding shape to the circlea prototype.
+// adding shape to the circlea.prototype.
 Circlea.prototype = Object.create(Shape.prototype);
+// always reste onstructor when nheriting form the protoype.
+Circlea.prototype.constructor = Circlea;
 // creating new method for Cirlcea 
 Circlea.prototype.draw = function(){
     console.log("draw");
@@ -344,27 +346,12 @@ htmlElemnt.prototype.focus = function(){
  } 
 
 // adding htmlElelemnt to the  HtmlselectElement protoype so we can get focus mehtod too.
-HtmlSelectElement.prototype = new htmlElement();
-HtmlSelectElement.protoytpe.constructor = HtmlSelectElement;
+// htmlSelectElement.prototype = new htmlElement();
+// htmlSelectElement.protoytpe.constructor = HtmlSelectElement;
 
 
-// Es6 refresher - react course//////
-// make own projects
 
-//  this key word & bind /////
 
-const person = {
-    name: " Andrew",
-    bjj (){
-        // returning areferance to the persn object
-        console.log(this);
-    }
-}
 
-// bind determines the value of this.can set the value of this permamnently
-const jitsu = person.bjj.bind(person);
-console.log(jitsu); 
-
-// so now this stand alon function points to person.bjj function.
-// whcih point to the Bject of that method = person.
-jitsu();
+// dom manipulation///
+document.getElementById("hello").innerHTML = "hello";

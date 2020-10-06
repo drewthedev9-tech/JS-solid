@@ -42,7 +42,9 @@ walk()
 function sum(discount,...prices){
     // reduce takes all values and puts them into a single.
 
- const total =  prices.reduce((a,b) => a + b)
+ const total =  prices.reduce((a,b) => {
+    return a + b
+ })
 // final price after discount.
  return total * (1 - discount);
 }

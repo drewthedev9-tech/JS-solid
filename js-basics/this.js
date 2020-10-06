@@ -1,0 +1,3 @@
+function testthis(){
+    return this;
+}
