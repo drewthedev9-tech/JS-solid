@@ -28,6 +28,8 @@ walk()
 // }
 // sum(1,2); // will only do the arguments in function out put = 3 
 
+// The rest parameter syntax allows us to represent an indefinite number of arguments as an array
+// good example in MDN.
 // the rest operator ///// ...args is the rest operator inside the parameter of 
 // a function will take all of the arguments in the sum function call 
 // below.
