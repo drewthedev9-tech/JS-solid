@@ -81,3 +81,14 @@ const PersonName = function(){
 const personNamepseak = PersonName.bind(person);
 personNamepseak(); // bob lee is my name gets it from person.
 
+// bracket notation vs. dot notation
+
+let obj ={
+    cat:'meow',
+    dog:'woof'
+}
+
+console.log(obj.cat) //meow
+// no limitations in addressing key value pairs.
+console.log(obj['cat']); //meow
+
